@@ -12,26 +12,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
-import { UseFormReturn } from "react-hook-form";
-import { z } from "zod";
-import { defaultNotations, defaultPrompts } from "./abc/data";
-
-const FormSchema = z.object({
-  prompt: z.string().min(10, {
-    message: "Prompt must be at least 10 characters.",
-  }),
-});
-
-type FormSchemaType = z.infer<typeof FormSchema>;
-
-interface InputPromptProps {
-  form: UseFormReturn<FormSchemaType>;
-  onSubmit: (data: FormSchemaType) => void;
-  onContinue: () => void;
-  loading: boolean;
-  setNotation: (notation: string) => void;
-  completeNotation: string;
-}
+import { defaultNotations, defaultPrompts } from "../abc/abc";
+import { InputPromptProps } from "./input";
 
 function getRandomInt(max: number) {
   return Math.floor(Math.random() * max);

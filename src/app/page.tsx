@@ -1,6 +1,6 @@
 "use client";
 
-import { InputPrompt } from "@/components/InputPrompt";
+import { InputPrompt } from "@/components/input/InputPrompt";
 import { AbcPrompt } from "@/components/abc/abc-prompt";
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";

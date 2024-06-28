@@ -1,11 +1,7 @@
 "use client";
 
 import AbcPlayer from "./abc-player";
-
-interface AbcPromptProps {
-  notation: string;
-  setNotation: (notation: string) => void;
-}
+import { AbcPromptProps } from "./abc";
 
 export const AbcPrompt: React.FC<AbcPromptProps> = ({
   notation,

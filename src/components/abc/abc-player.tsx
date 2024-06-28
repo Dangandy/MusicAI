@@ -2,10 +2,7 @@
 
 import { useEffect } from "react";
 import abcjs from "abcjs";
-
-interface AbcPlayerProps {
-  notation: string;
-}
+import { AbcPlayerProps } from "./abc";
 
 const AbcPlayer: React.FC<AbcPlayerProps> = ({ notation }) => {
   useEffect(() => {

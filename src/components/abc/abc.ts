@@ -64,3 +64,12 @@ export const defaultPrompts: string[] = [
   "Create a lively melody in ABC notation. The mood should be upbeat and playful, with a style reminiscent of Vivaldi's Spring from The Four Seasons. Ensure the notation is rich with dynamics and variations to capture the essence of Vivaldi's baroque brilliance.",
   "Compose a melody in ABC notation. The mood should be melancholic and soulful, inspired by the blues. Incorporate intricate rhythms and emotive phrasing to convey a deep sense of longing and expression.",
 ];
+
+export interface AbcPromptProps {
+  notation: string;
+  setNotation: (notation: string) => void;
+}
+
+export interface AbcPlayerProps {
+  notation: string;
+}
