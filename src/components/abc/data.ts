@@ -38,4 +38,36 @@ F2 A2 d2 f2 | e2 d2 c2 B2 | A2 G2 F2 E2 | D4 C4 |
 B,2 D2 G2 B,2 | A2 G2 F2 E2 | D2 B,2 A2 F2 | E4 D4 |
 `;
 
-;
+export const example2: string = `X:1
+T:Jazzy Mozart Melody
+M:4/4
+L:1/4
+Q:1/4=120
+K:C
+|: G2 G2 c2 c2 | G2 G2 c2 c2 | G2 G2 c2 c2 | E2 D2 C4 :|
+|: A2 A2 G2 E2 | A2 A2 G2 E2 | A2 A2 G2 E2 | C4 D4 :|
+|: E4 D2 G2 | E4 D2 G2 | E4 D2 G2 | C4 C2 A,2 :|`;
+
+export const example3: string = `X:1
+T:Jazzy Mozart Melody
+M:4/4
+L:1/4
+Q:1/4=120
+K:C
+|: G2 G2 c2 c2 | G2 G2 c2 c2 | G2 G2 c2 c2 | E2 D2 C4 :|
+|: A2 A2 G2 E2 | A2 A2 G2 E2 | A2 A2 G2 E2 | C4 D4 :|
+|: E4 D2 G2 | E4 D2 G2 | E4 D2 G2 | C4 C2 A,2 :|`;
+
+export const example4: string = `Here is the generated ABC notation based on your request:
+
+X:1
+T:Joyful Game Dance
+M:4/4
+L:1/8
+Q:1/4=160
+K:C
+V:1
+(ce)G2 (ce)G2 | (ce)G2 (ce)G2 | (ce)G2 (Bc)A2 | G4 G4 |
+(ce)G2 (ce)G2 | (ce)G2 (ce)G2 | (ce)G2 (Bc)A2 | G4 G4 |
+V:2
+(dc)B2 (dc)B2 | (dc)B2 (dc)B`;

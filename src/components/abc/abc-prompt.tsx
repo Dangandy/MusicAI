@@ -1,14 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import AbcPlayer from "./abc-player";
-import { defaultNotation } from "./data";
 
-export const AbcPrompt = () => {
-  const [notation, setNotation] = useState(defaultNotation);
+interface AbcPromptProps {
+  notation: string;
+  setNotation: (notation: string) => void;
+}
 
-  // create handler (there are often times that ChatGPT gives empty lines and this breaks ABC notation)
-
+export const AbcPrompt: React.FC<AbcPromptProps> = ({
+  notation,
+  setNotation,
+}) => {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">ABC Notation Player</h1>
