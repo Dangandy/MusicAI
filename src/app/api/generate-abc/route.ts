@@ -1,9 +1,3 @@
-import {
-  defaultNotation,
-  example2,
-  example3,
-  example4,
-} from "@/components/abc/data";
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
@@ -18,38 +12,27 @@ export async function POST(req: NextRequest) {
   const messages: OpenAI.Chat.ChatCompletionMessageParam[] = [
     {
       role: "system",
-      content:
-        "You are a helpful assistant that generates ABC notation for music based on mood and genre descriptions.",
+      content: "You are a helpful assistant that only generates ABC notation.",
     },
-    {
-      role: "user",
-      content: `Here is an example of ABC notation for reference:\n${defaultNotation}\nNotice how there are no new lines, that is bad.`,
-    },
-    {
-      role: "user",
-      content: `Here is an example of ABC notation for reference:\n${example2}\nThe prompt here was:Give me a 1 minute melody in ABC notation, mood is jazz, style is similar to beethovan`,
-    },
-    {
-      role: "user",
-      content: `Here is an example of ABC notation for reference:\n${example3}\nThe prompt here was:Give me a 1 minute melody in ABC notation, mood is jazz, style is Mozart`,
-    },
-    {
-      role: "user",
-      content: `Here is an example response:${example4}\nThe prompt here was:Give me a 1 minute melody in the style of mozart, with a hint of chopin theme is background game music it should make the people listening want to dance!! Notice how there is a description line and line break ("Here is the generated ABC notation based on your request:\n\n")? this is bad, don't do it.`,
-    },
-    { role: "user", content: prompt },
   ];
-  console.log({ messages });
+
+  if (prompt) {
+    messages.push({ role: "user", content: prompt });
+  }
 
   if (continuation) {
     messages.push({ role: "assistant", content: continuation });
-    messages.push({ role: "user", content: "Continue generating." });
+    messages.push({
+      role: "user",
+      content:
+        "Continue generating right where we previously left off, like we're adding more to the song.",
+    });
   }
 
   const params: OpenAI.Chat.ChatCompletionCreateParams = {
     model: "gpt-3.5-turbo",
     messages: messages,
-    max_tokens: 300, // Increased token limit for longer responses
+    max_tokens: 4000, // Increased token limit for longer responses
   };
 
   try {

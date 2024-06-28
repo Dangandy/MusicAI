@@ -1,1 +1,2 @@
-export declare const defaultNotation: string;
+export declare const defaultNotations: string[];
+export declare const defaultPrompts: string[];
