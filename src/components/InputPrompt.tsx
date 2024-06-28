@@ -14,8 +14,13 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { UseFormReturn } from "react-hook-form";
 import { z } from "zod";
-import { FormSchema } from "@/app/page";
 import { defaultNotations, defaultPrompts } from "./abc/data";
+
+const FormSchema = z.object({
+  prompt: z.string().min(10, {
+    message: "Prompt must be at least 10 characters.",
+  }),
+});
 
 type FormSchemaType = z.infer<typeof FormSchema>;
 
